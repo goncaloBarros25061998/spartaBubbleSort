@@ -9,7 +9,7 @@ class MainTest {
 
     @Test
     void main() {
-        Assertions.assertEquals("Ss");
+        Assertions.assertEquals(9, 2);
 
     }
 }
