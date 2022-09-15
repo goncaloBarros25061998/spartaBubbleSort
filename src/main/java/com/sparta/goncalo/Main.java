@@ -13,7 +13,7 @@ public class Main {
             System.out.println(algorithm);
         }
         int algorithm = scanner.nextInt();
-        System.out.println("Whats the length of the Array");
+        System.out.println("Whats the length of the Array!");
         int length = scanner.nextInt();
         int[] array = new int[length];
         Random random = new Random();
