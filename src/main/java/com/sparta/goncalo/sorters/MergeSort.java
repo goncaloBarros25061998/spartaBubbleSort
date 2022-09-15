@@ -1,25 +1,8 @@
-package com.sparta.goncalo;
+package com.sparta.goncalo.sorters;
 
-import java.util.Arrays;
-
-public class Sort implements Sorter {
+public class MergeSort implements Sorter {
     @Override
-    public int[] bubbleSort(int[] arrayToSort) {
-        int len = arrayToSort.length;
-        for (int i = 0; i < len - 1; ++i) {
-            for (int j = 0; j < len - i - 1; ++j) {
-                if (arrayToSort[j + 1] < arrayToSort[j]) {
-                    int swap = arrayToSort[j];
-                    arrayToSort[j] = arrayToSort[j + 1];
-                    arrayToSort[j + 1] = swap;
-                }
-            }
-        }
-        return arrayToSort;
-    }
-
-    @Override
-    public int[] mergeSort(int[] arrayToSort) {
+    public int[] sort(int[] arrayToSort) {
         int len = arrayToSort.length;
         // very if len >=1
         if (len <= 1) {
@@ -34,8 +17,8 @@ public class Sort implements Sorter {
         for (int j = middle; j < len; j++) {
             right[j - middle] = arrayToSort[j];
         }
-        mergeSort(left);
-        mergeSort(right);
+        sort(left);
+        sort(right);
         //need to add some left and right functions
         //
         // int[] left  = new int[];
@@ -64,5 +47,4 @@ public class Sort implements Sorter {
         }
         return arrayToSort;
     }
-
 }
