@@ -1,9 +1,15 @@
 package com.sparta.goncalo.sorters;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class MergeSort implements Sorter {
+    private static final Logger log = LogManager.getLogger(MergeSort.class);
+
     @Override
     public int[] sort(int[] arrayToSort) {
         int len = arrayToSort.length;
+        log.warn("Array Size : " + len);
         // very if len >=1
         if (len <= 1) {
             return arrayToSort;

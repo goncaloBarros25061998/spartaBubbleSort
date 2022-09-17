@@ -1,2 +1,3 @@
 # spartaBubbleSort
-Exercice of Bubble sort
+Exercise made for Bubblesort and for Sorting and array.
+

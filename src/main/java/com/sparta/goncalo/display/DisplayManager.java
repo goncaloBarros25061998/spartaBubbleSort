@@ -7,6 +7,8 @@ import com.sparta.goncalo.sorters.SortManager;
 import java.util.Random;
 import java.util.Scanner;
 
+import static com.sparta.goncalo.sorters.BubbleSort.log;
+
 public class DisplayManager {
     private long start;
     private long end;
@@ -50,6 +52,7 @@ public class DisplayManager {
        printExecutionTime();
 
 
+
     }
     public void startTime(){
         this.start = System.nanoTime();
@@ -60,6 +63,7 @@ public class DisplayManager {
     }
     public void printExecutionTime(){
         long execution = end - start;
+        log.warn("Execution Time : " + execution + " Nanoseconds");
         System.out.println("\nExecution time: " + execution + " nanoseconds");
     }
 }
