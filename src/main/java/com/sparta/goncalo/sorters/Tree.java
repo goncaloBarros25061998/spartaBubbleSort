@@ -1,10 +1,10 @@
 package com.sparta.goncalo.sorters;
 
-public interface Tree<E> {
+public interface Tree<Integer> {
     public boolean isEmpty();
-    public void remove(E element);
+    public void remove(Integer element);
 
-    public  void insert(E element);
+    public  void insert(Integer element);
 
     public int size();
     public int height();

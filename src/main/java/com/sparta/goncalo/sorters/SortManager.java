@@ -15,6 +15,9 @@ public class SortManager {
         MergeSort mergeSort = new MergeSort();
         return mergeSort.sort(arrayToSort);
     }
-
+    public int[] treeSort(int[] arrayToSort){
+        TreeSort treeSort = new TreeSort();
+        return treeSort.sort(arrayToSort);
+    }
 
 }

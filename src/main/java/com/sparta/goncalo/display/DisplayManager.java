@@ -1,8 +1,6 @@
 package com.sparta.goncalo.display;
 
-import com.sparta.goncalo.sorters.BubbleSort;
-import com.sparta.goncalo.sorters.MergeSort;
-import com.sparta.goncalo.sorters.SortManager;
+import com.sparta.goncalo.sorters.*;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -13,9 +11,10 @@ public class DisplayManager {
     private long start;
     private long end;
     public void run(){
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("Choose the sorting Algorithm");
-        String [] algorithms ={"1-BobbleSort", "2-MergeSort"};
+        String [] algorithms ={"1-BobbleSort", "2-MergeSort", "3-TreeSort"};
         for (String algorithm : algorithms){
             System.out.println(algorithm);
         }
@@ -25,7 +24,7 @@ public class DisplayManager {
         int[] array = new int[length];
         Random random = new Random();
         for(int i=0; i<length; i++){
-            array[i] = random.nextInt(10 +1 ) + 1;
+            array[i] = random.nextInt(100000 +1 ) + 1;
         }
         System.out.print("Unsorted Array: ");
 
@@ -45,9 +44,19 @@ public class DisplayManager {
            mergeSortDisplay.printArray(array);
            mergeSortDisplay.printAlgorithm();
            array= sortManager.mergeSort(array);
+
+
            this.endTime();
            mergeSortDisplay.printArray(array);
+        } else if(algorithm == 3){
+            TreeSortDisplay treeSortDisplay = new TreeSortDisplay();
+            treeSortDisplay.printArray(array);
+            treeSortDisplay.printAlgorithm();
+            array=sortManager.treeSort(array);
+            this.endTime();
+            treeSortDisplay.printArray(array);
         }
+
 
        printExecutionTime();
 
@@ -66,4 +75,5 @@ public class DisplayManager {
         log.warn("Execution Time : " + execution + " Nanoseconds");
         System.out.println("\nExecution time: " + execution + " nanoseconds");
     }
+
 }
